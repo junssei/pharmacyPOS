@@ -54,7 +54,7 @@ if (!isset($_SESSION['user'])) {
                                 <th> Generic Name </th>
                                 <th> Brand Name </th>
                                 <th> Price </th>
-                                <th> Quantity </th>
+                                <th> Stock </th>
                                 <!-- <th> Date Added </th> -->
                                 <th> Category </th>
                                 <th> Action </th>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2024 at 01:31 PM
+-- Generation Time: May 22, 2024 at 05:38 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -88,11 +88,11 @@ CREATE TABLE `medicine` (
 --
 
 INSERT INTO `medicine` (`medicineID`, `genericName`, `brandedName`, `price`, `stock`, `dateAdded`, `categoryID`) VALUES
-(2, 'Ibuprofen', 'Advil', 458.38, 56, '2024-05-10', 1),
-(3, 'Vitamin C', 'Natures Beauty', 570.83, 91, '2024-05-10', 3),
-(4, 'Hydrocortisone Cream', 'Cortizone-10', 387.24, 44, '2024-05-10', 4),
-(8, 'Amoxicillin', 'Amoxil', 905.63, 48, '2024-05-16', 2),
-(9, 'Loratadine', 'Claritin', 718.18, 178, '2024-05-16', 1),
+(2, 'Ibuprofen', 'Advil', 458.38, 100, '2024-05-22', 1),
+(3, 'Vitamin C', 'Natures Beauty', 570.83, 100, '2024-05-22', 3),
+(4, 'Hydrocortisone Cream', 'Cortizone-10', 387.24, 100, '2024-05-22', 4),
+(8, 'Amoxicillin', 'Amoxil', 905.63, 100, '2024-05-22', 2),
+(9, 'Loratadine', 'Claritin', 718.18, 200, '2024-05-22', 1),
 (10, 'Calcium Carbonate', 'Caltrate', 500.00, 100, '2024-05-16', 3),
 (11, 'Benzoyl Peroxide Gel', 'Neutrogena Rapid Clear', 450.00, 60, '2024-05-16', 4),
 (12, 'Burn Jel', 'Water Jel', 350.00, 40, '2024-05-16', 6),
