@@ -38,10 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function addToCart(id, name, price, stock) {
-    
-    
     var quantity = prompt("Please enter quantity", 1);
-    
+
     if (quantity == null || quantity == 0 || isNaN(quantity)) {
       return;
     }
@@ -74,12 +72,20 @@ document.addEventListener("DOMContentLoaded", function () {
           <td>${name}<input type="hidden" name="medicines[]" value="${id}" id="hidden-id-${id}"></td>
           <td>${subquantity}<input type="hidden" name="quantities[]" value="${subquantity}" id="hidden-quantity-${id}"></td>
           <td>${price}</td>
-          <td>${subtotal.toFixed(2)}<input type="hidden" name="subtotals[]" value="${subtotal.toFixed(2)}" id="hidden-subtotal-${id}"></td><td><img src="/images/bin.png" class="delete-icon"></td>
+          <td>${subtotal.toFixed(
+            2
+          )}<input type="hidden" name="subtotals[]" value="${subtotal.toFixed(
+        2
+      )}" id="hidden-subtotal-${id}"></td><td><img src="/images/bin.png" class="delete-icon"></td>
       `;
 
       cartTable.appendChild(newRow);
 
-      newRow.querySelector(".delete-icon").addEventListener("click",function () { deleteItem(newRow); });
+      newRow
+        .querySelector(".delete-icon")
+        .addEventListener("click", function () {
+          deleteItem(newRow);
+        });
 
       updateTally(subtotal, subquantity);
     }

@@ -60,13 +60,21 @@ if (!isset($_SESSION['user'])) {
         </div>
         <div class="content">
             <div class="left-content">
+                <!-- <div id="categories">
+                    <button"> Show All </button>
+                    <?php
+                    // $queryC = "SELECT * FROM category";
+                    // $query_runC = mysqli_query($conn, $queryC);
+                    // while ($rowCat = mysqli_fetch_array($query_runC)) {
+                    //     echo "<button>" . $rowCat['categoryName'] . "</button>";
+                    // }
+                    ?>
+                </div> -->
                 <div class="productMenu">
-                    <form class="search" method="GET">
-                        <input type="text" id="myInput" name="search" maxlength="32" onkeyup="myFunction()" placeholder="Search for medicine..." autocomplete="off" value="<?php if (isset($_GET['search'])) {
-                                                                                                                                                                                echo $_GET['search'];
-                                                                                                                                                                            } ?>">
+                    <div class="search" method="GET">
+                        <input type="text" id="myInput" name="search" maxlength="32" onkeyup="myFunction()" placeholder="Search for medicine..." autocomplete="off">
                         <img src="/images/search.png">
-                    </form>
+                    </div>
                     <div class="list">
                         <table id="myTable">
                             <tr>
@@ -81,16 +89,17 @@ if (!isset($_SESSION['user'])) {
                                 <td> 10 </td>
                             </tr> -->
                             <?php
-                            if (isset($_GET['search']) && !empty($_GET['search'])) {
-                                $search = ucwords($_GET['search']);
-                                $query = "SELECT * FROM medicine WHERE genericName = '$search' || brandedName = '$search'";
-                            } else {
-                                $query = "SELECT * FROM medicine";
-                            }
+                            // if (isset($_GET['search']) && !empty($_GET['search'])) {
+                            //     $search = ucwords($_GET['search']);
+                            //     $query = "SELECT * FROM medicine WHERE genericName = '$search' || brandedName = '$search'";
+                            // } else {
+                            //     $query = "SELECT * FROM medicine";
+                            // }
 
+                            $query = "SELECT * FROM medicine";
                             $query_run = mysqli_query($conn, $query);
                             while ($rowMed = mysqli_fetch_array($query_run)) {
-                                echo "<tr class='product-row' data-id='" . $rowMed['medicineID'] . "' data-genericName='" . $rowMed['genericName'] . "' data-price='" . $rowMed['price'] . "' data-stock='" . $rowMed['stock'] . "'>";
+                                echo "<tr class='product-row ctg" . $rowMed['categoryID'] . "' data-id='" . $rowMed['medicineID'] . "' data-genericName='" . $rowMed['genericName'] . "' data-price='" . $rowMed['price'] . "' data-stock='" . $rowMed['stock'] . "'>";
                                 echo "<td>" . $rowMed['genericName'] . "</td>";
                                 echo "<td>" . $rowMed['brandedName'] . "</td>";
                                 echo "<td>" . $rowMed['price'] . "</td>";
