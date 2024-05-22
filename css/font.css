@@ -1,0 +1,162 @@
+    @font-face{ /*poppins-thin*/ 
+        font-family: "Poppins";
+        src:url(/css/font/Poppins-Thin.ttf),
+        url(/POS_Pharmacy/css/font/Poppins-Thin.ttf);
+        font-weight: 100;
+        font-style: normal;
+    }
+    
+  /*poppins-extralight*/
+    @font-face{ 
+        font-family: "Poppins";
+        src:url(/css/font/Poppins-ExtraLight.ttf),
+        url(/POS_Pharmacy/css/font/Poppins-ExtraLight.ttf);
+        font-weight: 200;
+        font-style: normal;
+    }
+  /*.poppins-light*/
+  @font-face { 
+    font-family: "Poppins";
+    src:url(/css/font/Poppins-Light.ttf),
+    url(/POS_Pharmacy/css/font/Poppins-Light.ttf);
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  /*.poppins-regular*/
+  @font-face { 
+    font-family: "Poppins";
+    src:url(/css/font/Poppins-Regular.ttf),
+    url(/POS_Pharmacy/css/font/Poppins-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  /* .poppins-medium */
+  @font-face {
+    font-family: "Poppins";
+    src:url(/css/font/Poppins-Medium.ttf),
+    url(/POS_Pharmacy/css/font/Poppins-Medium.ttf);
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  /* .poppins-semibold */
+  @font-face{
+    font-family: "Poppins";
+    src:url(/css/font/Poppins-SemiBold.ttf),
+    url(/POS_Pharmacy/css/font/Poppins-SemiBold.ttf);
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  /* .poppins-bold */
+  @font-face {
+    font-family: "Poppins";
+    src:url(/css/font/Poppins-Bold.ttf),
+    url(/POS_Pharmacy/css/font/Poppins-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* .poppins-extrabold */
+  @font-face {
+    font-family: "Poppins";
+    src:url(/css/font/Poppins-ExtraBold.ttf),
+    url(/POS_Pharmacy/css/font/Poppins-ExtraBold.ttf);
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  /* .poppins-black */
+  @font-face {
+    font-family: "Poppins";
+    src:url(/css/font/Poppins-Black.ttf),
+    url(/POS_Pharmacy/css/font/Poppins-Black.ttf);
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+/* Italic */
+
+  /* .poppins-thin-italic */
+  @font-face {
+    font-family: "Poppins";
+    src:url(/css/font/Poppins-ThinItalic.ttf),
+    url(/POS_Pharmacy/css/font/Poppins-ThinItalic.ttf);
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  /* .poppins-extralight-italic */
+  @font-face {
+    font-family: "Poppins";
+    src:url(/css/font/Poppins-ExtraLightItalic.ttf),
+    url(/POS_Pharmacy/css/font/Poppins-ExtraLightItalic.ttf);
+    font-weight: 200;
+    font-style: italic;
+  }
+  
+  /* .poppins-light-italic */
+  @font-face {
+    font-family: "Poppins";
+    src:url(/css/font/Poppins-LightItalic.ttf),
+    url(/POS_Pharmacy/css/font/Poppins-LightItalic.ttf);
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  /* .poppins-regular-italic */
+  @font-face {
+    font-family: "Poppins";
+    src:url(/css/font/Poppins-Italic.ttf),
+    url(/POS_Pharmacy/css/font/Poppins-Italic.ttf);
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  /* .poppins-medium-italic */
+  @font-face {
+    font-family: "Poppins";
+    src:url(/css/font/Poppins-MediumItalic.ttf),
+    url(/POS_Pharmacy/css/font/Poppins-MediumItalic.ttf);
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  /* .poppins-semibold-italic */
+  @font-face {
+    font-family: "Poppins";
+    src:url(/css/font/Poppins-SemiBoldItalic.ttf),
+    url(/POS_Pharmacy/css/font/Poppins-SemiBoldItalic.ttf);
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  /* .poppins-bold-italic */
+  @font-face {
+    font-family: "Poppins";
+    src:url(/css/font/Poppins-BoldItalic.ttf),
+    url(/POS_Pharmacy/css/font/Poppins-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  /* .poppins-extrabold-italic */
+  @font-face {
+    font-family: "Poppins";
+    src:url(/css/font/Poppins-ExtraBoldItalic.ttf),
+    url(/POS_Pharmacy/css/font/Poppins-ExtraBoldItalic.ttf);
+    font-weight: 800;
+    font-style: italic;
+  }
+  
+  /* .poppins-black-italic */
+  @font-face {
+    font-family: "Poppins";
+    src:url(/css/font/Poppins-BlackItalic.ttf),
+    url(/POS_Pharmacy/css/font/Poppins-BlackItalic.ttf);
+    font-weight: 900;
+    font-style: italic;
+  }
+  

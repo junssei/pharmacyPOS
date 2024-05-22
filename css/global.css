@@ -1,0 +1,174 @@
+@import url(font.css);
+
+/* probably create some variable */
+:root {
+  /* Main */
+
+  --blackColor: #000;
+  --whiteColor: #fff;
+  --grayColor: #f1f1f1;
+  --darkgrayColor: #c3c3c3;
+  --backgroundColor: #efefef;
+  --inputBGColor: #e3ebf3;
+
+  /* Color Palette */
+  --mainColor: #135d66;
+  --secondColor: #003c43;
+  --thirddColor: #77b0aa;
+  --fourthColor: #e3fef7;
+
+  --borderStyle: var(--blackColor) 1px solid;
+
+  --redColor: #ff5b5b;
+
+  --greenbtnColor: #33b249;
+  --darkgreenbtnColor: #288f39;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* border-radius: 20px; */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #135d66;
+  /* border-radius: 30px; */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondColor);
+}
+
+body {
+  font-family: "Poppins";
+  font-style: normal;
+  /* background-color: #F5F5F5; */
+  /* background-color: #000; */
+  /* background-position: center;
+    background-size: contain; */
+  /* overflow:hidden; */
+  user-select: none;
+}
+
+/* user, profile */
+.userbox {
+  /* position: relative; */
+  /* height: 100%; */
+  /* background: red; */
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  /* padding: 1.5vw 2vh; */
+  /* margin-left: 1vw; */
+  /* margin-top: 0.5vh; */
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.usernamebox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userdropdown {
+  width: 0.625vw;
+  height: 0.625vw;
+  margin-left: 1.0416666666666667vw;
+  cursor: pointer;
+}
+
+.profilename {
+  display: flex;
+  margin-left: 1vw;
+  flex-direction: column;
+  width: 100%;
+}
+
+.profileimage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userprofile {
+  width: 2.4125vw;
+  height: 2.4125vw;
+  cursor: pointer;
+  border-radius: 100%;
+  transition: ease-in-out 0.2s;
+}
+
+.changeprofile {
+  width: 1.5625vw;
+  height: 1.5625vw;
+  cursor: pointer;
+  border-radius: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: ease-in-out 0.2s;
+}
+
+.profileimage:hover .userprofile {
+  opacity: 0.3;
+  transition: ease-in-out 0.2s;
+}
+
+.profileimage:hover .changeprofile {
+  opacity: 1;
+  transition: ease-in-out 0.2s;
+}
+
+.username {
+  font-size: 1vw;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-right: 1.5vw;
+}
+
+.userposition {
+  font-size: 0.8vw;
+  font-weight: 200;
+  text-transform: capitalize;
+}
+
+/* time and date */
+
+.timendate {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1.5vw;
+  text-align: right;
+}
+
+.datime {
+  font-size: 1vw;
+  font-weight: 600;
+}
+
+.dadate {
+  font-size: 0.8vw;
+  font-weight: 200;
+}
+
+/* time and date end */
+
+.icon img {
+  margin-left: 1.5104166666666667vw;
+  width: 2.0833333333333335vw;
+  height: 1.0416666666666667vw;
+}
+
+.active-link {
+  background-color: var(--thirddColor);
+}

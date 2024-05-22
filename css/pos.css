@@ -1,0 +1,343 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+/* Whole Page */
+.container {
+  height: 100vh;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  color: var(--whiteColor);
+  position: relative;
+  background-color: var(--mainColor);
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .logo {
+  width: 2vw;
+  height: 2vw;
+  margin-left: 0.5208333333333334vw;
+  cursor: pointer;
+}
+
+.profileNdate {
+  display: flex;
+  flex-direction: row;
+  margin-right: 1.5625vw;
+}
+
+.usermenu {
+  display: none;
+  color: var(--blackColor);
+  background-color: var(--whiteColor);
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  border: var(--borderStyle);
+  z-index: 1;
+}
+
+.usermenuLinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.usermenu a {
+  cursor: pointer;
+  padding: 0.2604166666666667vw 1.5625vw;
+  text-decoration: none;
+}
+
+.usermenu a:hover {
+  background-color: #77b0aa;
+}
+
+.usermenu .usermenuLogout:hover {
+  background-color: #ff5b5b;
+}
+
+.usernamebox img {
+  width: 0.5208333333333334vw;
+  height: 0.5208333333333334vw;
+  cursor: pointer;
+}
+/* End Header */
+
+/* Content */
+.content {
+  padding: 0.4166666666666667vw;
+  height: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  background-color: var(--whiteColor);
+  /* border: 1px solid rgb(255, 0, 0); */
+}
+
+/* product */
+.left-content {
+  /* background-color: #ff5b5b; */
+  width: 50%;
+  padding: 0 0.4166666666666667vw 0 0;
+  display: flex;
+  position: relative;
+  height: 100%;
+  /* margin-right: 0.5vw; */
+  /* border-right: 0.1vw solid #000; */
+  /* border: 1px solid rgb(255, 0, 0); */
+}
+
+/* product Content */
+.productMenu {
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  padding: 0.5vw;
+  position: relative;
+  flex-direction: column;
+  border: var(--borderStyle);
+}
+
+/* product Search */
+.search {
+  display: flex;
+  align-items: center;
+  height: 2.3vw;
+  display: flex;
+  margin-bottom: 1vh;
+  background-color: var(--inputBGColor);
+}
+
+.search input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1vw;
+  padding: 0 1vw 0 1vw;
+  background-color: #e3ebf300;
+}
+
+.search img {
+  width: 17px;
+  height: 17px;
+  opacity: 0.7;
+  position: relative;
+  margin-right: 0.78125vw;
+}
+
+.search input:focus {
+  background-color: var(--grayColor);
+  transition: ease 0.1s;
+}
+
+.search input:focus + img {
+  display: none;
+}
+
+/* product List */
+.list {
+  position: relative;
+  /* display: flex; */
+  width: 100%;
+  background-color: var(--whiteColor);
+  overflow-x: auto;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.list table {
+  border-collapse: collapse;
+  width: 100%;
+  /* white-space: nowrap; */
+}
+
+.list table td,
+.list table th {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #eeeeee;
+}
+
+.list table th {
+  background-color: #77b0aa;
+  position: sticky;
+  cursor: default;
+  top: 0;
+}
+
+.list table tr:nth-child(even) {
+  background-color: #d9d9d9;
+}
+
+.list table tr:hover {
+  background-color: #d2e0ee;
+  cursor: pointer;
+}
+
+/* End of Product */
+
+/* right content */
+.right-content {
+  /* background-color: rgb(255, 0, 0); */
+  /* border: 1px solid rgb(255, 0, 0); */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+/* Cart Tables */
+.cartSection {
+  background-color: #ffffff;
+  overflow-x: auto;
+  overflow-y: auto;
+  height: 100%;
+  margin-bottom: 1vh;
+  border: 0.1vw solid #000;
+}
+
+.cartSection table {
+  background-color: rgb(255, 255, 255);
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+}
+
+.cartSection table th {
+  background-color: #77b0aa;
+  border-left: 1px solid #eeeeee;
+  position: sticky;
+  top: 0px;
+}
+
+.cartSection table td,
+.cartSection table th {
+  padding: 8px;
+}
+
+.cartSection img:hover {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(53%) saturate(7457%)
+    hue-rotate(357deg) brightness(115%) contrast(121%);
+  cursor: pointer;
+}
+
+.quantityInput {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.minus,
+.plus {
+  background-color: var(--mainColor);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 1px 5px;
+  margin-right: 5px;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* End of Cart Tables */
+
+/* Start Tally Section */
+.tallySection {
+  background-color: var(--mainColor);
+  margin-bottom: 1vh;
+  color: var(--whiteColor);
+}
+
+.tallySection table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.tallySection table td,
+.tallySection table th {
+  padding: 8px;
+}
+
+/* End of Tally Section */
+/* Payment Section */
+.paymentSection {
+  background-color: var(--darkgrayColor);
+  /* border: var(--borderStyle); */
+  display: flex;
+  padding: 0.6vw;
+}
+
+.paymentInput {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
+.payInput {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.payInput input[type="number"] {
+  width: 45%;
+  height: 25%;
+  border: none;
+  outline: none;
+  font-size: 1vw;
+  padding: 0.8vw;
+  -moz-appearance: textfield;
+  border-radius: 0.20833333333333334vw;
+  background-color: var(--inputBGColor);
+}
+
+.paymentInput input[type="number"]:focus {
+  background-color: var(--grayColor);
+}
+
+.payButton {
+  position: relative;
+  height: 100%;
+}
+
+.payButton input[type="submit"] {
+  width: 100%;
+  border: none;
+  border-radius: 0.8vw;
+  font-size: 1.5vw;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 1vw 1vw;
+  color: var(--whiteColor);
+  background-color: var(--greenbtnColor);
+}
+
+.payButton input:hover {
+  background-color: var(--darkgreenbtnColor);
+}
+/* end Payment Section */
+
+/* End Content */
