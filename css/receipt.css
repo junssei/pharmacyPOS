@@ -6,12 +6,13 @@
 }
 
 body {
+  background-color: #717171;
 }
 
 .container {
   background-color: #717171;
   display: flex;
-
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -21,15 +22,16 @@ body {
 .receiptContainer {
   background-color: var(--whiteColor);
   position: relative;
-  width: 25%;
-  height: 75%;
-  padding: 25px;
+  border-radius: 0.5vw;
+  padding: 1.3020833333333333vw;
+  height: auto;
+  width: 20%;
 }
 
 .receiptHeader {
   display: flex;
-  margin-bottom: 1.5vw;
   align-items: center;
+  margin-bottom: 1.5vw;
   flex-direction: column;
   justify-content: center;
 }
@@ -76,7 +78,35 @@ body {
 }
 
 /* Footer */
-.receiptFooter p {
+.receiptFooter {
   font-size: 12px;
   text-align: center;
+}
+
+.receiptButtons {
+  width: 35vw;
+  display: flex;
+  margin-top: 1.5vw;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.receiptButtons a {
+  background-color: var(--blueColor);
+  color: var(--whiteColor);
+  text-decoration: none;
+  border-radius: 0.5vw;
+  font-weight: 600;
+  font-size: 1vw;
+  outline: none;
+  padding: 1vw;
+}
+
+.receiptButtons a[href="pos.php"] {
+  background-color: var(--redColor);
+}
+
+.receiptButtons a:hover {
+  background-color: var(--whiteColor);
+  color: var(--blackColor);
 }

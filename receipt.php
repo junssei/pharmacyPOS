@@ -22,10 +22,9 @@ session_start();
                 <p> Sabayle, Iligan City, 9200 Lanao del Norte </p>
             </div>
             <div class="receiptDateAndTags">
-                <p> 23/05/2024 </p>
+                <p> <?php echo date("m/d/Y"); ?> </p>
                 <p> PAYMENT#<span><?php echo $_SESSION['payID'] ?></span></p>
             </div>
-
             <table class="receiptOrders">
                 <!-- <tr>
                     <td> 1 </td>
@@ -34,7 +33,6 @@ session_start();
                 </tr> -->
                 <?php
                 $charge = $_SESSION['charge'];
-                $refNum = $_SESSION['refNo'];
                 $subtotal = 0;
 
                 for ($i = 0; $i < $_SESSION['countItems']; $i++) {
@@ -60,7 +58,6 @@ session_start();
                 ?>
             </table>
             <table class="receiptTotal">
-
                 <tr>
                     <td></td>
                     <td> <?php echo "Items: " . $_SESSION['countItems'] ?></td>
@@ -84,14 +81,20 @@ session_start();
             </table>
 
             <div class="receiptChange">
-                <p> GCashRefNo. <span><?php echo $refNum ?><span></p>
+                <p> GCashRefNo. <span><?php echo $_SESSION['refNo'] ?></span></p>
                 <p> CHANGE: <span> <?php echo $change ?> </span> </p>
             </div>
             <div class="receiptFooter">
                 <p> Thank you for purchasing </p>
             </div>
+
+        </div>
+        <div class="receiptButtons">
+            <a href="pos.php"> GO BACK </a>
+            <a href=""> PRINT </a>
         </div>
     </div>
+
 </body>
 
 </html>
