@@ -6,6 +6,12 @@ if (!isset($_SESSION['user'])) {
     header("Location: login.php");
     exit();
 }
+
+$_SESSION['orderedItems'] = array();
+$_SESSION['countItems'] = 0;
+$_SESSION['charge'] = 0;
+$_SESSION['refNo'] = 0;
+$_SESSION['payID'] = 0;
 ?>
 
 <!DOCTYPE html>
@@ -164,16 +170,14 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
                 </div>
-
             </form>
             <?php
-
-
             if (isset($_POST['payEnter'])) {
                 $employeeID = $_SESSION['id'];
                 $refNum = $_POST["referenceNum"];
                 $cashAmount = $_POST["cashAmount"];
                 $totalAmount = $_POST["totalAmount"];
+                $count = 0;
 
                 if ($cashAmount >= $totalAmount) {
                     $sqltoPayment = "INSERT INTO payment (amount, reference_num) VALUES ('$cashAmount', '$refNum')";
@@ -199,10 +203,19 @@ if (!isset($_SESSION['user'])) {
 
                             $sqltoMedicineUpdateQty = "UPDATE medicine SET stock = stock - $quantity WHERE medicineID = '$medicineID'";
                             mysqli_query($conn, $sqltoMedicineUpdateQty);
+
+                            $count = count($medicines);
+                            echo "<script> console.log('$count') </script>";
+                            array_push($_SESSION['orderedItems'], array($medicineID, $quantity, $subtotal));
                         }
+                        $_SESSION['countItems'] = $count;
                     }
+
+                    $_SESSION['refNo'] = $refNum;
+                    $_SESSION['payID'] = $paymentID;
+                    $_SESSION['charge'] = $cashAmount;
                     echo "<script> alert('Pay Successfully!'); </script>";
-                    echo "<script> location.replace('pos.php'); </script>";
+                    echo "<script> location.replace('receipt.php'); </script>";
                 } else {
                     echo "<script> alert('Not enough money!'); </script>";
                 }
