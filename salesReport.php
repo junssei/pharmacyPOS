@@ -54,8 +54,6 @@ if (!isset($_SESSION['user'])) {
                                 <th> Medicine </th>
                             </tr>
                             <?php
-
-
                             $fetchOrder = "SELECT * FROM orderf";
                             $execOrder = mysqli_query($conn, $fetchOrder);
                             while ($rowOrder = mysqli_fetch_array($execOrder)) {

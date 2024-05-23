@@ -42,6 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (quantity == null || quantity == 0 || isNaN(quantity)) {
       return;
+    } else if (stock < quantity) {
+      alert("Out of Stock");
+      return;
     }
 
     var subquantity = +quantity;

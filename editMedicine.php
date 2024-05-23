@@ -57,17 +57,17 @@ if (!isset($_SESSION['user'])) {
                     ?>
                     <form action="editMedicine.php" method="POST" autocomplete="off">
                         <div class="editForm">
-                            <input name="mID" type="hidden" value='<?php echo $rowMed['medicineID'] ?>' required> </input>
+                            <input name="mID" type="hidden" value='<?php echo $rowMed['medicineID'] ?>'> </input>
                             <label> Generic Name </label>
-                            <input name="genericName" type="text" placeholder="Enter Generic Name" value='<?php echo $rowMed['genericName'] ?>' autofocus required> </input>
+                            <input name="genericName" type="text" placeholder="Enter Generic Name" value='<?php echo $rowMed['genericName'] ?>' autofocus> </input>
                             <label> Branded Name </label>
-                            <input name="brandName" type="text" placeholder="Enter Brand Name" value='<?php echo $rowMed['brandedName'] ?>' required> </input>
+                            <input name="brandName" type="text" placeholder="Enter Brand Name" value='<?php echo $rowMed['brandedName'] ?>'> </input>
                             <label> Price </label>
-                            <input name="medicinePrice" type="number" step="0.01" placeholder="Enter Price" min="1" value='<?php echo $rowMed['price'] ?>' required> </input>
+                            <input name="medicinePrice" type="number" step="0.01" placeholder="Enter Price" min="1" value='<?php echo $rowMed['price'] ?>'> </input>
                             <label> Quantity </label>
-                            <input name="medicineQuantity" type="number" placeholder="Enter Quantity" min="1" value='<?php echo $rowMed['stock'] ?>' required> </input>
+                            <input name="medicineQuantity" type="number" placeholder="Enter Quantity" min="0" value='<?php echo $rowMed['stock'] ?>'> </input>
                             <label> Category </label> <?php $categoryID = $rowMed['categoryID'] ?>
-                            <select name="medicineCategory" placeholder="Category" required>
+                            <select name="medicineCategory" placeholder="Category">
                                 <?php
                                 $fetchCategoryValue = "SELECT * FROM category WHERE categoryID = '$categoryID'";
                                 $exec = mysqli_query($conn, $fetchCategoryValue);

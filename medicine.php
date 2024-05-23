@@ -69,8 +69,11 @@ if (!isset($_SESSION['user'])) {
                                 echo "<td>" . $rowMed['genericName'] . "</td>";
                                 echo "<td>" . $rowMed['brandedName'] . "</td>";
                                 echo "<td>" . $rowMed['price'] . "</td>";
-                                echo "<td>" . $rowMed['stock'] . "</td>";
-                                // echo "<td>" . $rowMed['dateAdded'] . "</td>";
+                                if ($rowMed['stock'] <= 0) {
+                                    echo "<td style='color:red'> Out of Stock </td>";
+                                } else {
+                                    echo "<td>" . $rowMed['stock'] . "</td>";
+                                }
                                 echo "<td>" . $rowMed['categoryID'] . "</td>";
                                 echo "<td> <a class='editBtn' href='editMedicine.php?medicineID=$rowMed[0]'>Edit</a>
                                 <a class='deltBtn' href='delete.php?medicineID=$rowMed[0]'>Delete</a></td>";
