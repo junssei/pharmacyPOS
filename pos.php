@@ -99,7 +99,7 @@ if (!isset($_SESSION['user'])) {
                             $query = "SELECT * FROM medicine";
                             $query_run = mysqli_query($conn, $query);
                             while ($rowMed = mysqli_fetch_array($query_run)) {
-                                echo "<tr class='product-row ctg" . $rowMed['categoryID'] . "' data-id='" . $rowMed['medicineID'] . "' data-genericName='" . $rowMed['genericName'] . "' data-price='" . $rowMed['price'] . "' data-stock='" . $rowMed['stock'] . "'>";
+                                echo "<tr class='product-row ctg" . $rowMed['categoryID'] . "' data-id='" . $rowMed['medicineID'] . "' data-genericName='" . $rowMed['genericName'] . "' data-price='" . $rowMed['price'] . "' data-stock=" . $rowMed['stock'] . ">";
                                 echo "<td>" . $rowMed['genericName'] . "</td>";
                                 echo "<td>" . $rowMed['brandedName'] . "</td>";
                                 echo "<td>" . $rowMed['price'] . "</td>";
@@ -175,7 +175,7 @@ if (!isset($_SESSION['user'])) {
                 $cashAmount = $_POST["cashAmount"];
                 $totalAmount = $_POST["totalAmount"];
 
-                if ($cashAmount > $totalAmount) {
+                if ($cashAmount >= $totalAmount) {
                     $sqltoPayment = "INSERT INTO payment (amount, reference_num) VALUES ('$cashAmount', '$refNum')";
                     mysqli_query($conn, $sqltoPayment);
                     $paymentID = mysqli_insert_id($conn);
@@ -201,6 +201,8 @@ if (!isset($_SESSION['user'])) {
                             mysqli_query($conn, $sqltoMedicineUpdateQty);
                         }
                     }
+                    echo "<script> alert('Pay Successfully!'); </script>";
+                    echo "<script> location.replace('pos.php'); </script>";
                 } else {
                     echo "<script> alert('Not enough money!'); </script>";
                 }

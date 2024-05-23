@@ -135,7 +135,7 @@
 .search {
   display: flex;
   align-items: center;
-  height: 2.3vw;
+  height: 5.5vh;
   display: flex;
   margin-bottom: 1vh;
   background-color: var(--inputBGColor);
@@ -146,7 +146,7 @@
   width: 100%;
   border: none;
   outline: none;
-  font-size: 1vw;
+  font-size: 2vh;
   padding: 0 1vw 0 1vw;
   background-color: #e3ebf300;
 }
@@ -300,8 +300,8 @@
 .paymentSection {
   background-color: var(--darkgrayColor);
   /* border: var(--borderStyle); */
-  display: flex;
   padding: 0.6vw;
+  display: flex;
 }
 
 .paymentInput {

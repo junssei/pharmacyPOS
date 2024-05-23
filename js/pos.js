@@ -38,14 +38,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function addToCart(id, name, price, stock) {
-    var quantity = prompt("Please enter quantity", 1);
+    var quantity = parseInt(prompt("Please enter quantity"));
 
     if (quantity == null || quantity == 0 || isNaN(quantity)) {
       return;
-    } else if (stock < quantity) {
+    }
+
+    if (stock == 0) {
       alert("Out of Stock");
+      // console.log("qty:" + quantity + " stck: " + stock);
+      return;
+    } else if (quantity > stock) {
+      alert("You input too much quantity!");
+      // console.log("qty:" + quantity + " stck: " + stock);
       return;
     }
+
+    console.log("qty:" + quantity + " stck: " + stock);
 
     var subquantity = +quantity;
     var subtotal = price * subquantity;
