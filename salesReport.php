@@ -51,7 +51,7 @@ if (!isset($_SESSION['user'])) {
                                 <th> Order ID </th>
                                 <th> Payment </th>
                                 <th> Reference No </th>
-                                <th> Medicine </th>
+                                <th width="800px"> Medicine </th>
                             </tr>
                             <?php
                             $fetchOrder = "SELECT * FROM orderf";

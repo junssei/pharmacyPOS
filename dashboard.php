@@ -43,9 +43,42 @@ if (!isset($_SESSION['user'])) {
                         <p> A quick data overview of the inventory. </p>
                     </div>
                 </div>
-                <div class="items">
-                    <div id="box1">
+                <div class="subcontent">
+                    <?php
 
+                    $countMedicine = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM medicine"));
+                    $countCategories = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM category"));
+                    $countReceiptGenerated = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM orderf"));
+                    $countTotalQuantity = mysqli_fetch_array(mysqli_query($conn, "SELECT SUM(quantity) FROM order_medicine"));
+
+                    ?>
+                    <div class="dashboardBoxes">
+                        <table class="inventoryBox">
+                            <tr>
+                                <th colspan="2"> Inventory </th>
+                            </tr>
+                            <tr class="boxValue">
+                                <td> <?php echo $countMedicine ?> </td>
+                                <td> <?php echo $countCategories ?> </td>
+                            </tr>
+                            <tr class="boxStatus">
+                                <td> Total No. Of Medicines</td>
+                                <td> Categories </td>
+                            </tr>
+                        </table>
+                        <table class="quickreportBox">
+                            <tr>
+                                <th colspan="2"> Report </th>
+                            </tr>
+                            <tr class="boxValue">
+                                <td> <?php echo $countTotalQuantity[0] ?></td>
+                                <td> <?php echo $countReceiptGenerated ?> </td>
+                            </tr>
+                            <tr class="boxStatus">
+                                <td> Qty of Medicines Sold </td>
+                                <td> Receipt Generated </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>

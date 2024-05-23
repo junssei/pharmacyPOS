@@ -66,6 +66,52 @@
   padding-right: 2vw;
 }
 
+/* For Dashboard */
+.dashboardBoxes {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 74vh;
+  border-collapse: collapse;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background-color: #003c43; */
+}
+
+.dashboardBoxes th {
+  font-size: 1.3vw;
+  text-align: center;
+  padding: 1vw;
+  border-bottom: var(--borderStyle);
+}
+
+.inventoryBox,
+.quickreportBox {
+  width: 48%;
+  height: 0;
+  text-align: center;
+  border-radius: 0.2vw;
+  border: var(--borderStyle);
+  background-color: var(--whiteColor);
+}
+
+.inventoryBox td,
+.quickreportBox td {
+  width: 50%;
+  padding: 10px 0 10px 0px;
+  font-size: 1vw;
+}
+
+.boxValue {
+  font-weight: 700;
+}
+
+.boxStatus {
+  font-weight: 400;
+}
+
+/* End Of Dashboard */
+
 .addbtn {
   display: flex;
   flex-direction: row;

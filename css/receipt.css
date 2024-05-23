@@ -57,6 +57,7 @@ body {
 
 .receiptOrders {
   width: 100%;
+  font-weight: 500;
   margin-bottom: 1.5vw;
   border-collapse: collapse;
 
@@ -65,6 +66,7 @@ body {
 
 .receiptTotal {
   width: 100%;
+  font-weight: 500;
   margin-bottom: 1.5vw;
   border-collapse: collapse;
 
