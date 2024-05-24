@@ -13,7 +13,7 @@ if (!isset($_SESSION['user'])) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard - Home</title>
+    <title> Dashboard - Home </title>
     <link rel="icon" type="image/x-icon" href="images/logo.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/global.js"></script>
@@ -68,7 +68,7 @@ if (!isset($_SESSION['user'])) {
                         </table>
                         <table class="quickreportBox">
                             <tr>
-                                <th colspan="2"> Report </th>
+                                <th colspan="2"> Quick Report </th>
                             </tr>
                             <tr class="boxValue">
                                 <td> <?php echo $countTotalQuantity[0] ?></td>
