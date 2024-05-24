@@ -105,7 +105,7 @@ $_SESSION['payID'] = 0;
                             $query = "SELECT * FROM medicine";
                             $query_run = mysqli_query($conn, $query);
                             while ($rowMed = mysqli_fetch_array($query_run)) {
-                                echo "<tr class='product-row ctg" . $rowMed['categoryID'] . "' data-id='" . $rowMed['medicineID'] . "' data-genericName='" . $rowMed['genericName'] . "' data-price='" . $rowMed['price'] . "' data-stock=" . $rowMed['stock'] . ">";
+                                echo "<tr class='product-row'" . $rowMed['categoryID'] . "' data-id='" . $rowMed['medicineID'] . "' data-genericName='" . $rowMed['genericName'] . "' data-price='" . $rowMed['price'] . "' data-stock=" . $rowMed['stock'] . ">";
                                 echo "<td>" . $rowMed['genericName'] . "</td>";
                                 echo "<td>" . $rowMed['brandedName'] . "</td>";
                                 echo "<td>" . $rowMed['price'] . "</td>";

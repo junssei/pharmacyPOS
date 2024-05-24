@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2024 at 08:42 AM
+-- Generation Time: May 24, 2024 at 10:23 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -88,11 +88,11 @@ CREATE TABLE `medicine` (
 --
 
 INSERT INTO `medicine` (`medicineID`, `genericName`, `brandedName`, `price`, `stock`, `dateAdded`, `categoryID`) VALUES
-(2, 'Ibuprofen', 'Advil', 458.38, 44, '2024-05-23', 1),
+(2, 'Ibuprofen', 'Advil', 458.38, 42, '2024-05-23', 1),
 (3, 'Vitamin C', 'Natures Beauty', 570.83, 95, '2024-05-23', 3),
 (4, 'Hydrocortisone Cream', 'Cortizone-10', 387.24, 74, '2024-05-23', 4),
-(8, 'Amoxicillin', 'Amoxil', 905.63, 49, '2024-05-23', 2),
-(9, 'Loratadine', 'Claritin', 718.18, 50, '2024-05-23', 1),
+(8, 'Amoxicillin', 'Amoxil', 905.63, 48, '2024-05-23', 2),
+(9, 'Loratadine', 'Claritin', 718.18, 48, '2024-05-23', 1),
 (10, 'Calcium Carbonate', 'Caltrate', 500.00, 62, '2024-05-23', 3),
 (11, 'Benzoyl Peroxide Gel', 'Neutrogena Rapid Clear', 450.00, 44, '2024-05-16', 4),
 (12, 'Burn Jel', 'Water Jel', 350.00, 63, '2024-05-23', 6),
@@ -157,7 +157,9 @@ INSERT INTO `orderf` (`orderID`, `employeeID`, `paymentID`, `orderDate`) VALUES
 (133, 1, 38, '2024-05-23'),
 (134, 1, 39, '2024-05-23'),
 (135, 2, 40, '2024-05-23'),
-(136, 2, 41, '2024-05-23');
+(136, 2, 41, '2024-05-23'),
+(137, 1, 42, '2024-05-24'),
+(138, 1, 43, '2024-05-24');
 
 -- --------------------------------------------------------
 
@@ -247,7 +249,11 @@ INSERT INTO `order_medicine` (`orderID`, `medicineID`, `quantity`) VALUES
 (136, 10, 1),
 (136, 14, 1),
 (136, 12, 1),
-(136, 15, 1);
+(136, 15, 1),
+(137, 9, 2),
+(137, 8, 0),
+(138, 2, 2),
+(138, 8, 1);
 
 -- --------------------------------------------------------
 
@@ -306,7 +312,9 @@ INSERT INTO `payment` (`paymentID`, `amount`, `reference_num`) VALUES
 (38, 3958.38, 0),
 (39, 1800.00, 0),
 (40, 3000.00, 0),
-(41, 4000.00, 0);
+(41, 4000.00, 0),
+(42, 4000.00, 0),
+(43, 2000.00, 0);
 
 --
 -- Indexes for dumped tables
@@ -378,13 +386,13 @@ ALTER TABLE `medicine`
 -- AUTO_INCREMENT for table `orderf`
 --
 ALTER TABLE `orderf`
-  MODIFY `orderID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
+  MODIFY `orderID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `paymentID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `paymentID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- Constraints for dumped tables

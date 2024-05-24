@@ -86,9 +86,10 @@ document.addEventListener("DOMContentLoaded", function () {
           <td>${price}</td>
           <td>${subtotal.toFixed(
             2
-          )}<input type="hidden" name="subtotals[]" value="${subtotal.toFixed(
+          )} <input type="hidden" name="subtotals[]" value="${subtotal.toFixed(
         2
-      )}" id="hidden-subtotal-${id}"></td><td><img src="/images/bin.png" class="delete-icon"></td>
+      )}" id="hidden-subtotal-${id}"></td>
+          <td> <img src="images/bin.png" alt="DELETE" class="delete-icon"> </td>
       `;
 
       cartTable.appendChild(newRow);
