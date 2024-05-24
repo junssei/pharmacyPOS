@@ -82,7 +82,7 @@ if (!isset($_SESSION['user'])) {
                         $eID = $_POST['eID'];
                         $username = $_POST['username'];
                         $password = $_POST['password'];
-                        $position = $_POST['position'];
+                        $position = ucwords($_POST['position']);
                         if ($_POST['adminAccess'] == 'on') {
                             $access = 1;
                         } else {
