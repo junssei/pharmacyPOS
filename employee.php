@@ -89,7 +89,7 @@ if (!isset($_SESSION['user'])) {
                             <input name="position" type="text" placeholder="Enter Position" required>
                             <label class="adminLabel"> Admin
                                 <label class="switch">
-                                    <input name="adminAccess" type="checkbox" required>
+                                    <input name="adminAccess" type="checkbox">
                                     <span class="slider round"></span>
                                 </label>
                             </label>
@@ -105,7 +105,7 @@ if (!isset($_SESSION['user'])) {
                     if (isset($_POST['submit'])) {
                         $username = $_POST['username'];
                         $password = $_POST['password'];
-                        $position = $_POST['position'];
+                        $position = ucwords($_POST['position']);
                         if ($_POST['adminAccess'] == 'on') {
                             $access = 1;
                         } else {
@@ -113,7 +113,6 @@ if (!isset($_SESSION['user'])) {
                         }
 
                         $sql = "INSERT INTO employee VALUES ('', '$username', '$password', '$position', '$access')";
-
                         $query = mysqli_query($conn, $sql);
 
                         if ($query) {
