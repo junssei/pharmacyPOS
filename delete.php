@@ -6,15 +6,8 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 
-echo "<style> body{
-    background-color: #000;
-}</style>";
-
-$mID = $_GET['medicineID'];
-$cID = $_GET['categoryID'];
-$eID = $_GET['employeeID'];
-
-if ($mID) {
+if ($_GET['medicineID']) {
+    $mID = $_GET['medicineID'];
     $deleteMed = "DELETE FROM medicine WHERE medicineID = '$mID'";
     $deleteResult = mysqli_query($conn, $deleteMed);
 
@@ -25,7 +18,8 @@ if ($mID) {
         echo "Delete Failed";
         echo "<script> window.location.href = 'medicine.php'; </script>";
     }
-} else if ($cID) {
+} else if ($_GET['categoryID']) {
+    $cID = $_GET['categoryID'];
     $deleteCategory = "DELETE FROM category WHERE categoryID = '$cID'";
     $deleteResult = mysqli_query($conn, $deleteCategory);
 
@@ -36,7 +30,8 @@ if ($mID) {
         echo "Delete Failed";
         echo "<script> window.location.href = 'category.php'; </script>";
     }
-} else if ($eID) {
+} else if ($_GET['employeeID']) {
+    $eID = $_GET['employeeID'];
     $deleteEmployee = "DELETE FROM employee WHERE employeeID = '$eID'";
     $deleteResult = mysqli_query($conn, $deleteEmployee);
 

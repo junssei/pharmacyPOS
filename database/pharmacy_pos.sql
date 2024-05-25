@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2024 at 10:23 AM
+-- Generation Time: May 25, 2024 at 01:23 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -65,7 +65,12 @@ CREATE TABLE `employee` (
 
 INSERT INTO `employee` (`employeeID`, `username`, `password`, `position`, `admin`) VALUES
 (1, 'admin', 'admin', 'Administrator', 1),
-(2, 'user1', 'user1', 'Cashier', 0);
+(2, 'user1', 'user1', 'Cashier', 0),
+(3, 'june', 'vincent', 'Pharmacist', 1),
+(4, 'jessa', 'bigcas', 'Cashier', 0),
+(5, 'user2', 'user2', 'Cashier', 0),
+(6, 'user3', 'user3', 'Cashier', 0),
+(7, 'user4', 'user4', 'Cashier', 0);
 
 -- --------------------------------------------------------
 
@@ -88,16 +93,17 @@ CREATE TABLE `medicine` (
 --
 
 INSERT INTO `medicine` (`medicineID`, `genericName`, `brandedName`, `price`, `stock`, `dateAdded`, `categoryID`) VALUES
-(2, 'Ibuprofen', 'Advil', 458.38, 42, '2024-05-23', 1),
+(2, 'Ibuprofen', 'Advil', 458.38, 40, '2024-05-23', 1),
 (3, 'Vitamin C', 'Natures Beauty', 570.83, 95, '2024-05-23', 3),
 (4, 'Hydrocortisone Cream', 'Cortizone-10', 387.24, 74, '2024-05-23', 4),
 (8, 'Amoxicillin', 'Amoxil', 905.63, 48, '2024-05-23', 2),
-(9, 'Loratadine', 'Claritin', 718.18, 48, '2024-05-23', 1),
-(10, 'Calcium Carbonate', 'Caltrate', 500.00, 62, '2024-05-23', 3),
+(9, 'Loratadine', 'Claritin', 718.18, 47, '2024-05-23', 1),
+(10, 'Calcium Carbonate', 'Caltrate', 500.00, 61, '2024-05-23', 3),
 (11, 'Benzoyl Peroxide Gel', 'Neutrogena Rapid Clear', 450.00, 44, '2024-05-16', 4),
 (12, 'Burn Jel', 'Water Jel', 350.00, 63, '2024-05-23', 6),
-(14, 'Adult Diapers', 'Tena', 600.00, 50, '2024-05-23', 7),
-(15, 'Medical Adhesive Tape', '3M Micropore', 100.00, 95, '2024-05-22', 6);
+(14, 'Adult Diapers', 'Tena', 600.00, 48, '2024-05-23', 7),
+(15, 'Medical Adhesive Tape', '3M Micropore', 100.00, 95, '2024-05-22', 6),
+(16, 'Ferrous Sulfate', 'Fergon', 400.00, 79, '2024-05-24', 3);
 
 -- --------------------------------------------------------
 
@@ -159,7 +165,9 @@ INSERT INTO `orderf` (`orderID`, `employeeID`, `paymentID`, `orderDate`) VALUES
 (135, 2, 40, '2024-05-23'),
 (136, 2, 41, '2024-05-23'),
 (137, 1, 42, '2024-05-24'),
-(138, 1, 43, '2024-05-24');
+(138, 1, 43, '2024-05-24'),
+(139, 3, 44, '2024-05-24'),
+(140, 3, 45, '2024-05-24');
 
 -- --------------------------------------------------------
 
@@ -253,7 +261,12 @@ INSERT INTO `order_medicine` (`orderID`, `medicineID`, `quantity`) VALUES
 (137, 9, 2),
 (137, 8, 0),
 (138, 2, 2),
-(138, 8, 1);
+(138, 8, 1),
+(139, 2, 2),
+(139, 16, 1),
+(139, 10, 1),
+(140, 14, 2),
+(140, 9, 1);
 
 -- --------------------------------------------------------
 
@@ -314,7 +327,9 @@ INSERT INTO `payment` (`paymentID`, `amount`, `reference_num`) VALUES
 (40, 3000.00, 0),
 (41, 4000.00, 0),
 (42, 4000.00, 0),
-(43, 2000.00, 0);
+(43, 2000.00, 0),
+(44, 2000.00, 0),
+(45, 1918.18, 445343016916);
 
 --
 -- Indexes for dumped tables
@@ -374,25 +389,25 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `employeeID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `employeeID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `medicine`
 --
 ALTER TABLE `medicine`
-  MODIFY `medicineID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `medicineID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `orderf`
 --
 ALTER TABLE `orderf`
-  MODIFY `orderID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+  MODIFY `orderID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `paymentID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `paymentID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- Constraints for dumped tables
