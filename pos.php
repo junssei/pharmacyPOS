@@ -105,7 +105,7 @@ $_SESSION['payID'] = 0;
                             $query = "SELECT * FROM medicine";
                             $query_run = mysqli_query($conn, $query);
                             while ($rowMed = mysqli_fetch_array($query_run)) {
-                                echo "<tr class='product-row'" . $rowMed['categoryID'] . "' data-id='" . $rowMed['medicineID'] . "' data-genericName='" . $rowMed['genericName'] . "' data-price='" . $rowMed['price'] . "' data-stock=" . $rowMed['stock'] . ">";
+                                echo "<tr class='product-row'" . $rowMed['categoryID'] . "' data-id='" . $rowMed['medicineID'] . "' data-genericName='" . $rowMed['genericName'] . "' data-brandName='" . $rowMed['brandedName'] . "' data-price='" . $rowMed['price'] . "' data-stock=" . $rowMed['stock'] . ">";
                                 echo "<td>" . $rowMed['genericName'] . "</td>";
                                 echo "<td>" . $rowMed['brandedName'] . "</td>";
                                 echo "<td>" . $rowMed['price'] . "</td>";
@@ -124,6 +124,7 @@ $_SESSION['payID'] = 0;
                     <table id="cartTable">
                         <tr>
                             <th> Generic Name </th>
+                            <th> Brand Name </th>
                             <th width="100px"> Quantity </th>
                             <th width="100px"> Price </th>
                             <th width="100px"> Subtotal </th>

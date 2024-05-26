@@ -29,15 +29,16 @@ document.addEventListener("DOMContentLoaded", function () {
   productRows.forEach(function (row) {
     row.addEventListener("click", function () {
       var id = row.getAttribute("data-id");
-      var name = row.getAttribute("data-genericName");
+      var gname = row.getAttribute("data-genericName");
+      var bname = row.getAttribute("data-brandName");
       var stock = row.getAttribute("data-stock");
       var price = row.getAttribute("data-price");
 
-      addToCart(id, name, price, stock);
+      addToCart(id, gname, bname, price, stock);
     });
   });
 
-  function addToCart(id, name, price, stock) {
+  function addToCart(id, gname, bname, price, stock) {
     var quantity = parseInt(prompt("Please enter quantity"));
 
     if (quantity == null || quantity == 0 || isNaN(quantity)) {
@@ -81,7 +82,8 @@ document.addEventListener("DOMContentLoaded", function () {
       newRow.setAttribute("data-subtotal", subtotal);
       newRow.setAttribute("data-quantity", subquantity);
       newRow.innerHTML = `
-          <td>${name}<input type="hidden" name="medicines[]" value="${id}" id="hidden-id-${id}"></td>
+          <td>${gname}<input type="hidden" name="medicines[]" value="${id}" id="hidden-id-${id}"></td>
+          <td>${bname}<input type="hidden" name="medicines[]" value="${id}" id="hidden-id-${id}"></td>
           <td>${subquantity}<input type="hidden" name="quantities[]" value="${subquantity}" id="hidden-quantity-${id}"></td>
           <td>${price}</td>
           <td>${subtotal.toFixed(
