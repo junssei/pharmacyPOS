@@ -125,10 +125,10 @@ $_SESSION['payID'] = 0;
                         <tr>
                             <th> Generic Name </th>
                             <th> Brand Name </th>
-                            <th width="100px"> Quantity </th>
-                            <th width="100px"> Price </th>
-                            <th width="100px"> Subtotal </th>
-                            <th width="100px"> Action </th>
+                            <th width="50px"> Quantity </th>
+                            <th width="50px"> Price </th>
+                            <th width="50px"> Subtotal </th>
+                            <th width="50px"> Action </th>
                         </tr>
                         <!-- <tr>
                             <td> Ibuprofen </td>
@@ -210,6 +210,8 @@ $_SESSION['payID'] = 0;
                             array_push($_SESSION['orderedItems'], array($medicineID, $quantity, $subtotal));
                         }
                         $_SESSION['countItems'] = $count;
+                    } else {
+                        echo "<script> alert('No Medicines Added'); </script>";
                     }
 
                     $_SESSION['refNo'] = $refNum;

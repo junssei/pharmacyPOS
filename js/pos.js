@@ -72,8 +72,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       existingRow.setAttribute("data-quantity", newQuantity);
       existingRow.setAttribute("data-subtotal", newSubtotal);
-      existingRow.cells[1].textContent = newQuantity;
-      existingRow.cells[3].textContent = newSubtotal.toFixed(2);
+      existingRow.cells[2].textContent = newQuantity;
+      existingRow.cells[4].textContent = newSubtotal.toFixed(2);
 
       updateTally(subtotal, subquantity);
     } else {
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
       newRow.setAttribute("data-quantity", subquantity);
       newRow.innerHTML = `
           <td>${gname}<input type="hidden" name="medicines[]" value="${id}" id="hidden-id-${id}"></td>
-          <td>${bname}<input type="hidden" name="medicines[]" value="${id}" id="hidden-id-${id}"></td>
+          <td>${bname}</td>
           <td>${subquantity}<input type="hidden" name="quantities[]" value="${subquantity}" id="hidden-quantity-${id}"></td>
           <td>${price}</td>
           <td>${subtotal.toFixed(
@@ -91,8 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
           )} <input type="hidden" name="subtotals[]" value="${subtotal.toFixed(
         2
       )}" id="hidden-subtotal-${id}"></td>
-          <td> <img src="images/bin.png" alt="DELETE" class="delete-icon"> </td>
-      `;
+          <td> <img src="images/bin.png" alt="DELETE" class="delete-icon"> </td>`;
 
       cartTable.appendChild(newRow);
 
